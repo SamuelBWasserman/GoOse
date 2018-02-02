@@ -11,6 +11,7 @@ type Article struct {
 	CleanedText     string             `json:"content,omitempty"`
 	MetaDescription string             `json:"description,omitempty"`
 	MetaLang        string             `json:"lang,omitempty"`
+	MetaAuthor			string			   `json:"author,omitempty"`
 	MetaFavicon     string             `json:"favicon,omitempty"`
 	MetaKeywords    string             `json:"keywords,omitempty"`
 	CanonicalLink   string             `json:"canonicalurl,omitempty"`

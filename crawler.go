@@ -137,11 +137,11 @@ func (c Crawler) Crawl() (*Article, error) {
 	}
 	article.FinalURL = c.url
 	article.Doc = document
-
+	article.PublishDate = extractor.GetMetaContentWithSelector(document,"meta[name#=(?i)^datetime]")
 	article.Title = extractor.GetTitle(document)
 	article.MetaLang = extractor.GetMetaLanguage(document)
 	article.MetaFavicon = extractor.GetFavicon(document)
-
+	article.MetaAuthor = extractor.GetMetaAuthor(document)
 	article.MetaDescription = extractor.GetMetaContentWithSelector(document, "meta[name#=(?i)^description$]")
 	article.MetaKeywords = extractor.GetMetaContentWithSelector(document, "meta[name#=(?i)^keywords$]")
 	article.CanonicalLink = extractor.GetCanonicalLink(document)
